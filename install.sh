@@ -4,25 +4,25 @@ set -euo pipefail
 REPO_URL="https://raw.githubusercontent.com/AbrahamOP/claude-security-agents/main/agents"
 AGENTS_DIR="./agents"
 SCOPE_GUARD="_scope-guard.md"
-VERSION="1.1.0"
+VERSION="1.2.0"
 
 # All agent filenames (alphabetical)
 ALL_AGENTS=(
   blue-detection-rules.md blue-email-analyst.md blue-forensics-triage.md
   blue-ids-tuner.md blue-log-analyzer.md blue-siem-analyst.md
-  blue-threat-hunter.md
+  blue-threat-hunter.md blue-vuln-manager.md
   devsecops-code-review.md devsecops-container.md
   devsecops-iac-scanner.md devsecops-k8s-security.md
-  devsecops-pipeline.md devsecops-secrets-scanner.md
+  devsecops-pipeline.md devsecops-sbom.md devsecops-secrets-scanner.md
   grc-audit-prep.md grc-compliance-auditor.md grc-policy-writer.md
   grc-risk-assessor.md
-  ir-forensics.md ir-incident-handler.md ir-malware-analyst.md
-  ir-playbook-builder.md ir-threat-intel.md
+  ir-evidence-handler.md ir-forensics.md ir-incident-handler.md
+  ir-malware-analyst.md ir-playbook-builder.md ir-threat-intel.md
   purple-adversary-emulation.md purple-attack-detect-map.md
   purple-detection-gap.md purple-threat-model.md
   red-ad-attack.md red-api-security.md red-cloud-attack.md
   red-payload-craft.md red-privesc.md red-recon.md
-  red-social-engineer.md red-webapp.md
+  red-social-engineer.md red-webapp.md red-wireless.md
 )
 
 usage() {

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/agents-34-blue?style=for-the-badge" alt="34 agents"/>
+  <img src="https://img.shields.io/badge/agents-38-blue?style=for-the-badge" alt="38 agents"/>
   <img src="https://img.shields.io/badge/categories-6-purple?style=for-the-badge" alt="6 categories"/>
   <img src="https://img.shields.io/badge/dependencies-zero-green?style=for-the-badge" alt="zero deps"/>
   <img src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge" alt="MIT"/>
@@ -8,7 +8,7 @@
 <h1 align="center">claude-security-agents</h1>
 
 <p align="center">
-  <strong>34 specialized Claude Code sub-agents for full-stack cybersecurity.</strong><br/>
+  <strong>38 specialized Claude Code sub-agents for full-stack cybersecurity.</strong><br/>
   Blue Team · Red Team · Purple Team · DevSecOps · GRC · Incident Response
 </p>
 
@@ -42,7 +42,7 @@ No configuration. No API keys. No external tools required. Install the agents, o
 ## Quick Start
 
 ```bash
-# One-line install (all 34 agents)
+# One-line install (all 38 agents)
 curl -fsSL https://raw.githubusercontent.com/AbrahamOP/claude-security-agents/main/install.sh | bash
 
 # Or clone first
@@ -74,6 +74,7 @@ graph TB
         B5[email-analyst]
         B6[log-analyzer]
         B7[forensics-triage]
+        B8[vuln-manager]
     end
 
     subgraph "RED TEAM"
@@ -85,6 +86,7 @@ graph TB
         R6[api-security]
         R7[ad-attack]
         R8[payload-craft]
+        R9[wireless]
     end
 
     subgraph "PURPLE TEAM"
@@ -101,6 +103,7 @@ graph TB
         D4[iac-scanner]
         D5[secrets-scanner]
         D6[k8s-security]
+        D7[sbom]
     end
 
     subgraph "GRC"
@@ -116,6 +119,7 @@ graph TB
         I3[malware-analyst]
         I4[threat-intel]
         I5[playbook-builder]
+        I6[evidence-handler]
     end
 
     SG[/_scope-guard.md/]
@@ -138,6 +142,7 @@ graph TB
 | `blue-email-analyst` | T1 | Analyzes email headers, SPF/DKIM/DMARC, delivers phishing verdicts |
 | `blue-log-analyzer` | T1 | Parses and correlates security events across log formats |
 | `blue-forensics-triage` | T2 | First-responder live triage — volatile data collection and preservation |
+| `blue-vuln-manager` | T1 | Vulnerability lifecycle — triage, EPSS/KEV prioritization, SLA tracking |
 
 ### Red Team — Attack and Exploit
 
@@ -151,6 +156,7 @@ graph TB
 | `red-cloud-attack` | T1 | Cloud attack paths — IAM escalation, metadata abuse (AWS/Azure/GCP) |
 | `red-social-engineer` | T1 | Phishing campaign design, pretexts, vishing scripts, awareness testing |
 | `red-payload-craft` | T1 | Payload crafting advisory — msfvenom, encoding, evasion techniques |
+| `red-wireless` | T1 | WiFi/BLE security assessment — WPA cracking, rogue AP, handshake analysis |
 
 ### Purple Team — Bridge Attack and Defense
 
@@ -171,6 +177,7 @@ graph TB
 | `devsecops-iac-scanner` | T2 | Terraform/CloudFormation/K8s manifest misconfiguration detection |
 | `devsecops-secrets-scanner` | T2 | Detects leaked secrets in code, git history, and config files |
 | `devsecops-k8s-security` | T2 | Kubernetes RBAC, pod security, network policies, CIS K8s Benchmark |
+| `devsecops-sbom` | T2 | SBOM generation, dependency CVE scanning, license compliance, supply chain risk |
 
 ### GRC & Compliance — Govern and Certify
 
@@ -190,6 +197,7 @@ graph TB
 | `ir-malware-analyst` | T1 | Static/dynamic malware analysis, IOC extraction, YARA generation |
 | `ir-threat-intel` | T2 | IOC enrichment, campaign correlation, Diamond Model TI reports |
 | `ir-playbook-builder` | T2 | Builds structured IR playbooks with decision trees and metrics |
+| `ir-evidence-handler` | T1 | Chain of custody, forensic imaging, evidence preservation (RFC 3227/ISO 27037) |
 
 ---
 
