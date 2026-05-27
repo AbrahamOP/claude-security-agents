@@ -4,10 +4,13 @@ set -euo pipefail
 REPO_URL="https://raw.githubusercontent.com/AbrahamOP/claude-security-agents/main/agents"
 AGENTS_DIR="./agents"
 SCOPE_GUARD="_scope-guard.md"
-VERSION="1.2.0"
+VERSION="1.3.0"
 
 # All agent filenames (alphabetical)
 ALL_AGENTS=(
+  audit-api.md audit-c-cpp.md audit-go.md audit-infra-code.md
+  audit-java.md audit-javascript.md audit-php.md audit-python.md
+  audit-ruby.md audit-rust.md
   blue-detection-rules.md blue-email-analyst.md blue-forensics-triage.md
   blue-ids-tuner.md blue-log-analyzer.md blue-siem-analyst.md
   blue-threat-hunter.md blue-vuln-manager.md
@@ -34,7 +37,7 @@ Usage: install.sh [OPTIONS]
 Options:
   --global           Install to ~/.claude/agents/ (default)
   --project          Install to ./.claude/agents/ (current project)
-  --category LIST    Comma-separated: red,blue,purple,devsecops,grc,ir
+  --category LIST    Comma-separated: red,blue,purple,devsecops,grc,ir,audit
   --lite             Use Claude Haiku instead of Sonnet (cheaper)
   --uninstall        Remove installed agents
   --status           Show installed agents

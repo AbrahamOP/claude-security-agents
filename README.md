@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/agents-38-blue?style=for-the-badge" alt="38 agents"/>
-  <img src="https://img.shields.io/badge/categories-6-purple?style=for-the-badge" alt="6 categories"/>
+  <img src="https://img.shields.io/badge/agents-48-blue?style=for-the-badge" alt="48 agents"/>
+  <img src="https://img.shields.io/badge/categories-7-purple?style=for-the-badge" alt="7 categories"/>
   <img src="https://img.shields.io/badge/dependencies-zero-green?style=for-the-badge" alt="zero deps"/>
   <img src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge" alt="MIT"/>
 </p>
@@ -8,8 +8,8 @@
 <h1 align="center">claude-security-agents</h1>
 
 <p align="center">
-  <strong>38 specialized Claude Code sub-agents for full-stack cybersecurity.</strong><br/>
-  Blue Team · Red Team · Purple Team · DevSecOps · GRC · Incident Response
+  <strong>48 specialized Claude Code sub-agents for full-stack cybersecurity.</strong><br/>
+  Blue Team · Red Team · Purple Team · DevSecOps · GRC · Incident Response · Code Audit
 </p>
 
 <p align="center">
@@ -42,7 +42,7 @@ No configuration. No API keys. No external tools required. Install the agents, o
 ## Quick Start
 
 ```bash
-# One-line install (all 38 agents)
+# One-line install (all 48 agents)
 curl -fsSL https://raw.githubusercontent.com/AbrahamOP/claude-security-agents/main/install.sh | bash
 
 # Or clone first
@@ -122,6 +122,19 @@ graph TB
         I6[evidence-handler]
     end
 
+    subgraph "CODE AUDIT"
+        A1[go]
+        A2[python]
+        A3[javascript]
+        A4[java]
+        A5[rust]
+        A6[c-cpp]
+        A7[php]
+        A8[ruby]
+        A9[api]
+        A10[infra-code]
+    end
+
     SG[/_scope-guard.md/]
     SG -.->|enforced by| R1 & R2 & R6 & R7
     P3 -.-> SG
@@ -187,6 +200,21 @@ graph TB
 | `grc-policy-writer` | T2 | Drafts security policies — IR plan, AUP, access control, BCP/DRP |
 | `grc-risk-assessor` | T1 | Risk assessment — ISO 27005, NIST 800-30, FAIR, EBIOS RM |
 | `grc-audit-prep` | T1 | Audit readiness — evidence mapping, gap prioritization, interview prep |
+
+### Code Audit — Deep Language-Specific Security Review
+
+| Agent | Tier | What it does |
+|:------|:----:|:-------------|
+| `audit-go` | T1 | Go — goroutine leaks, race conditions, defer ordering, template injection, crypto misuse |
+| `audit-python` | T1 | Python — eval/pickle, SSTI, Django/Flask/FastAPI framework-specific flaws |
+| `audit-javascript` | T1 | JS/TS — prototype pollution, XSS, ReDoS, Express/React/Next.js/Vue issues |
+| `audit-java` | T1 | Java — deserialization, XXE, SpEL injection, Spring Boot actuator exposure |
+| `audit-rust` | T1 | Rust — unsafe blocks, FFI boundaries, integer overflow, transmute soundness |
+| `audit-c-cpp` | T1 | C/C++ — buffer overflow, format strings, use-after-free, compiler hardening flags |
+| `audit-php` | T1 | PHP — SQLi, LFI/RFI, type juggling, Laravel/WordPress/Symfony specifics |
+| `audit-ruby` | T1 | Ruby — eval/send abuse, YAML deserialization, Rails mass assignment, SSTI |
+| `audit-api` | T1 | API — REST/GraphQL/gRPC audit mapped to OWASP API Security Top 10 (2023) |
+| `audit-infra-code` | T1 | Infra — shell scripts, Ansible, systemd, cron, Dockerfiles, CI/CD configs |
 
 ### IR & Forensics — Respond and Investigate
 
@@ -277,6 +305,23 @@ model: opus     # most capable, complex analysis
 "Scan this Terraform config for AWS misconfigurations"
 "Search this repo's git history for leaked secrets"
 "Audit this Kubernetes deployment for pod security issues"
+```
+</details>
+
+<details>
+<summary><strong>Code Audit examples</strong></summary>
+
+```
+"Security audit this Go HTTP handler for injection and race conditions"
+"Review this Python Django app — check for ORM injection and CSRF bypass"
+"Audit this React/Next.js app for XSS and SSR data leaks"
+"Check this Java Spring Boot app for deserialization and actuator exposure"
+"Audit these unsafe blocks in my Rust codebase"
+"Review this C codebase for buffer overflows and format string vulns"
+"Audit this Laravel app for mass assignment and type juggling"
+"Security review this Rails controller for SQL injection and SSTI"
+"Audit this GraphQL API for introspection, depth limits, and BOLA"
+"Review these bash scripts and Ansible playbooks for hardcoded secrets"
 ```
 </details>
 
